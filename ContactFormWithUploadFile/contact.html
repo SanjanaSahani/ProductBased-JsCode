@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Contact Us</h2>
+        <form action="contact.html" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required minlength="3" maxlength="18">
+                <div class="error" id="nameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Registered Email Id:</label>
+                <input type="email" class="form-control" id="email" name="email" required pattern="^[\w\.\-]+@[a-zA-Z\d\-]+\.[a-zA-Z]{2,6}$" minlength="5" maxlength="25">
+                <div class="error" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <select class="form-control" id="subject" name="subject" required>
+                    <option value="feedback">Feedback</option>
+                    <option value="technical_support">Technical Support</option>
+                    <option value="payment_issue">Payment related issue</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description" rows="4" maxlength="250"></textarea>
+                <div class="error" id="descriptionError"></div>
+            </div>
+            <div class="form-group">
+                <div class="attachment-container">
+                    <label for="attachment">Attach:</label>
+                    <input type="file" class="form-control-file" id="attachment" name="attachment" accept=".pdf,image/*" onchange="toggleCancelButton()">
+                    <button type="button" class="btn btn-danger" id="cancelButton" onclick="cancelAttachment()" style="display: none;">Cancel</button>
+                </div>
+                <span id="attachmentError" style="color: red;"></span>
+            </div>
+            <input type="hidden" id="hiddenInput" name="hiddenInput" class="hidden-input">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+    <!-- Bootstrap JS and dependencies -->
+     <script src="contact.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+  
+</body>
+</html>
