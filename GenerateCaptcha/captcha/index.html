@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Captcha</title>
+    <style>
+        .captcha {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <!-- Other form fields -->
+        <label for="name">Name</label> 
+        <input type="text" name="name" id="name"> <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"> <br>
+
+        <div id="captcha" class="captcha"></div>
+        <input type="hidden" id="ufinInput" name="UFIN" value="">
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+    <script src="captcha.js"></script>
+</body>
+</html>
+

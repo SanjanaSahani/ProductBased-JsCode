@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha</title>
+    <style>
+        .captcha {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <!-- Other form fields -->
+        <label for="name">Name</label> 
+        <input type="text" name="name" id="name"> <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"> <br>
+
+        <div id="captcha" class="captcha"></div>
+
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to place the captcha block in the form
+            function placeCaptcha() {
+                const captchaElement = document.getElementById('captcha');
+                if (captchaElement) {
+                    // You can customize the captcha content here
+                    captchaElement.innerHTML = '<label for="captchaInput">Enter Captcha: 1Gq45</label> <br>' +
+                                               '<input type="text" id="captchaInput" name="captchaInput">';
+                }
+            }
+
+            // Run the placeCaptcha function when the document loads
+            placeCaptcha();
+
+            // Function to validate the captcha
+            function validateCaptcha(event) {
+                event.preventDefault(); // Prevent the form from submitting
+                const captchaInput = document.getElementById('captchaInput').value;
+                const captchaExpected = '1Gq45'; // The expected captcha value
+
+                if (captchaInput === captchaExpected) {
+                    alert('Captcha validated successfully!');
+                    // If captcha is validated, you can submit the form programmatically
+                    // document.getElementById('myForm').submit();
+                } else {
+                    alert('Invalid captcha. Please try again.');
+                }
+            }
+
+            // Add event listener to the submit button to validate the captcha when clicked
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.addEventListener('click', validateCaptcha);
+        });
+    </script>
+</body>
+</html>
