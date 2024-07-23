@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POP UP Contact Form</title>
+    <!-- the contact form with a "Close" button to hide the form when it's no longer needed. -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            height: 100vh;
+            margin-left: 45%;
+        }
+
+        .contact-form {
+            display: none;
+            width: 300px;
+            position: absolute;
+            left: 37%;
+            margin-top: 30px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        textarea {
+            width: -webkit-fill-available;
+            height: 200px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #28a745;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+        .close-btn{
+        background-color: transparent;
+         border: none; 
+        color: red; 
+        float: right;
+        font-weight: bolder;
+        }
+        .close-btn:hover{
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="showContactForm()">Contact</button>
+
+    <div id="contactForm" class="contact-form">
+        
+        <form>
+            <h2>New Contact Form <button class="close-btn" type="button" onclick="hideContactForm()">X</button></h2>
+
+            
+          
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea><br><br>
+
+            <input style="background-color: rgb(0, 195, 255); width: -webkit-fill-available;" type="submit"
+                value="Submit">
+       
+        </form>
+    </div>
+</body>
+<script>
+    function showContactForm() {
+        document.getElementById('contactForm').style.display = 'block';
+    }
+
+    function hideContactForm() {
+        document.getElementById('contactForm').style.display = 'none';
+    }
+</script>
+
+</html>
