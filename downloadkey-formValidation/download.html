@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div style="padding: 10px; margin: auto;">
+            <form style="width: 325px; height: 275px; padding: 10px; background-color: aliceblue;">
+
+                <div style="padding: 10px;">
+                <h2>File Download</h2>
+                <label for="name" style="font-size: 20px;">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+                <div id="name-error" class="error">
+
+                </div>
+
+                <div style="padding: 10px;"></div>
+                    <label for="key" style="font-size: 20px;">Download Key:</label> <br>
+                    <input type="text" id="key" name="key" placeholder="Download Key" required>
+                    <div id="key-error" class="error"></div>
+                </div>
+
+              <div>
+                  <button style="background-color: black; color: white; margin-top: 10px; padding: 6px; margin-left: 10px;" type="submit"
+                    id="submit-btn">Submit</button>
+              </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
