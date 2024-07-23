@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="editable_table.css">
+</head>
+<body>
+    <table id="editableTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-row-id="1">
+                <td>1</td>
+                <td>
+                    <span class="editable" data-key="name">John Doe</span>
+                    <button class="edit-btn" data-key="name">Edit</button>
+                </td>
+                <td>
+                    <span class="editable" data-key="email">john@example.com</span>
+                    <button class="edit-btn" data-key="email">Edit</button>
+                </td>
+            </tr>
+            <tr data-row-id="2">
+                <td>2</td>
+                <td>
+                    <span class="editable" data-key="name">Jane Smith</span>
+                    <button class="edit-btn" data-key="name">Edit</button>
+                </td>
+                <td>
+                    <span class="editable" data-key="email">jane@example.com</span>
+                    <button class="edit-btn" data-key="email">Edit</button>
+                </td>
+            </tr>
+            <tr data-row-id="3">
+                <td>3</td>
+                <td>
+                    <span class="editable" data-key="name">Alice Johnson</span>
+                    <button class="edit-btn" data-key="name">Edit</button>
+                </td>
+                <td>
+                    <span class="editable" data-key="email">alice@example.com</span>
+                    <button class="edit-btn" data-key="email">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="editable_table.js"></script>
+    <script>
+        const table = new EditableTable('editableTable');
+        table.makeEditable(['name', 'email']);
+        table.require(['name', 'email']);
+    </script>
+</body>
+</html>
+
